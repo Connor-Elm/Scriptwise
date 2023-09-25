@@ -27,4 +27,6 @@ img {
     margin: 20px auto; /* Center the image */
     border: 2px solid #333; /* Add a border around the image */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
+    top:0;
+    left:0;
 }
