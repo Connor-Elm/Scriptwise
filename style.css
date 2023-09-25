@@ -21,13 +21,12 @@ h1 {
 
 /* Style the image */
 img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     display: block;
     margin: 20px auto; /* Center the image */
-    border: 2px solid #333; /* Add a border around the image */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
     position:absolute;
-    top: 1;
+    top: 1.5;
     left: 1;
 }
