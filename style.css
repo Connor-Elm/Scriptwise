@@ -25,7 +25,7 @@ img {
     height: auto;
     display: block;
     margin: 20px auto; /* Center the image */
-    position:absolute;
-    top: 2;
+    position: absolute;
+    top: 0;
     left: 1;
 }
