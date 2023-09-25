@@ -1,15 +1,30 @@
+/* Reset some default browser styles */
+body, h1, img {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and text color for the body */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
+    background-color: #f0f0f0; /* Light gray background */
+    font-family: Arial, sans-serif;
+    color: #333; /* Dark gray text color */
+    text-align: center;
 }
-header {
-  background-color: #562785;
-  color: white;
-  padding: 10px;
-}
+
+/* Style the header */
 h1 {
-  font-size: 2rem;
+    background-color: #007BFF; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 20px;
 }
-.container {
-  padding: 20px;
+
+/* Style the image */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Center the image */
+    border: 2px solid #333; /* Add a border around the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
 }
