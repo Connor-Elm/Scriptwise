@@ -33,6 +33,7 @@ img {
     left: 20px; /* Position 20px from the left */
     border: 2px solid #333; /* Add a border around the image */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
+    z-index: 2; /* Set the z-index to 2 for the image to be above all */
 }
 
 /* Style the sidebar */
@@ -56,7 +57,10 @@ img {
     text-align: center;
     background-color: #ccc; /* Grey background color for the tabs */
     border-right: 4px solid #fff; /* White border on the right side of tabs */
+    z-index: 1; /* Set the z-index to 1 for the numbers to be below the image */
 }
 
 .sidebar a:hover {
-   
+    background-color: #666; /* Darker grey background on hover */
+    color: #fff; /* White text color on hover */
+}
