@@ -56,7 +56,7 @@ img {
     text-align: center;
     background-color: #ccc; /* Grey background color for the tabs */
     border-right: 4px solid #fff; /* White border on the right side of tabs */
-    z-index: -1; /* Set the z-index to -1 for the numbers to be behind the header */
+    z-index: 1; /* Set the z-index to -1 for the numbers to be behind the header */
 }
 
 .sidebar a:hover {
