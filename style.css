@@ -21,7 +21,7 @@ h1 {
     padding: 20px;
     margin: 0; /* Remove any default margin */
     position: relative; /* Add relative positioning to the header */
-    z-index: 1; /* Set the z-index to 1 for the header to make it overlap */
+    z-index: 0; /* Set the z-index to 1 for the header to make it overlap */
 }
 
 /* Style the image */
