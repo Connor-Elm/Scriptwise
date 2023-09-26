@@ -26,6 +26,6 @@ img {
     display: block;
     margin: 20px auto; /* Center the image */
     position: absolute;
-    top: 3;
+    top: 30;
     left: 1;
 }
