@@ -35,9 +35,9 @@ img {
 .sidebar {
     background-color: #ccc; /* Grey background color for the sidebar */
     width: 60px; /* Adjust the width as needed */
-    height: 80px; /* Full height of the viewport */
+    height: 100%; /* Full height of the viewport */
     position: fixed; /* Fix the sidebar position */
-    top: 0; /* Position at the top */
+    top: 12.5%; /* Position approximately one eighth down */
     left: 0; /* Position at the left */
     display: flex;
     flex-direction: column;
