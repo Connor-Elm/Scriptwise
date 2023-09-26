@@ -16,7 +16,7 @@ body {
 
 /* Style the header with a purple background */
 h1 {
-    background-color: #666665; /* Purple background color */
+    background-color: #562785; /* Purple background color */
     color: #fff; /* White text color */
     padding: 20px;
     margin: 0; /* Remove any default margin */
@@ -57,7 +57,7 @@ img {
     background-color: #ccc; /* Grey background color for the tabs */
     border-right: 4px solid #fff; /* White border on the right side of tabs */
     z-index: 1; /* Set the z-index to -1 for the numbers to be behind the header */
-    padding-top: 40px; /* Lower the text by 40px */
+    padding-top: 200px; /* Lower the text by Setpx */
 }
 
 .sidebar a:hover {
