@@ -28,4 +28,5 @@ img {
     position: absolute;
     top: 20;
     left: 20;
+    boarder: 2px;
 }
