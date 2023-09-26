@@ -10,14 +10,18 @@ body {
     font-family: Arial, sans-serif;
     color: #333; /* Dark gray text color */
     text-align: center;
+    position: relative; /* Add relative positioning to the body */
+    z-index: 0; /* Set the z-index to 0 for the body */
 }
 
 /* Style the header with a purple background */
 h1 {
-    background-color: #800080; /* Purple background color */
+    background-color: #562785; /* Purple background color */
     color: #fff; /* White text color */
     padding: 20px;
     margin: 0; /* Remove any default margin */
+    position: relative; /* Add relative positioning to the header */
+    z-index: 1; /* Set the z-index to 1 for the header to make it overlap */
 }
 
 /* Style the image */
@@ -35,11 +39,13 @@ img {
 .sidebar {
     background-color: #ccc; /* Grey background color for the sidebar */
     width: 60px; /* Adjust the width as needed */
-    height: 60px; /* Full height of the viewport */
+    height: 100%; /* Full height of the viewport */
     position: fixed; /* Fix the sidebar position */
+    top: 0; /* Position at the top */
     left: 0; /* Position at the left */
     display: flex;
     flex-direction: column;
+    z-index: 0; /* Set the z-index to 0 for the sidebar */
 }
 
 .sidebar a {
@@ -53,6 +59,4 @@ img {
 }
 
 .sidebar a:hover {
-    background-color: #666; /* Darker grey background on hover */
-    color: #fff; /* White text color on hover */
-}
+   
