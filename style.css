@@ -1,5 +1,5 @@
-
-body, h1, img {
+/* Reset some default browser styles */
+body, h1, img, .sidebar {
     margin: 0;
     padding: 0;
 }
@@ -17,16 +17,36 @@ h1 {
     background-color: #562785; /* Purple background color */
     color: #fff; /* White text color */
     padding: 20px;
+    margin: 0; /* Remove any default margin */
 }
 
 /* Style the image */
 img {
-    max-width: 80%;
+    max-width: 100px; /* Set a maximum width for the image */
     height: auto;
-    display: block;
-    margin: 20px auto; /* Center the image */
-    position: absolute;
-    top: 20;
-    left: 20;
-    boarder: 2px;
+    position: absolute; /* Position the image absolutely */
+    top: 20px; /* Position 20px from the top */
+    left: 20px; /* Position 20px from the left */
+    border: 2px solid #333; /* Add a border around the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
+}
+
+/* Style the sidebar */
+.sidebar {
+    background-color: #333; /* Dark gray background */
+    width: 60px; /* Adjust the width as needed */
+    height: 100%; /* Full height of the viewport */
+    position: fixed; /* Fix the sidebar position */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sidebar a {
+    color: #fff; /* White text color for the tabs */
+    text-decoration: none;
+    font-size: 20px; /* Adjust the font size as needed */
 }
