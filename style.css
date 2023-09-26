@@ -26,7 +26,7 @@ h1 {
 
 /* Style the image */
 img {
-    max-width: 90px; /* Set a maximum width for the image */
+    max-width: 95px; /* Set a maximum width for the image */
     height: auto;
     position: absolute; /* Position the image absolutely */
     top: 0px; /* Position 20px from the top */
