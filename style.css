@@ -30,7 +30,7 @@ img {
     height: auto;
     position: absolute; /* Position the image absolutely */
     top: 0px; /* Position 20px from the top */
-    left: 25px; /* Position 20px from the left */
+    left: 18px; /* Position 20px from the left */
     z-index: 2; /* Set the z-index to 2 for the image to be above all */
 }
 
