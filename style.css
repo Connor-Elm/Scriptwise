@@ -1,5 +1,5 @@
 /* Reset some default browser styles */
-body, h1, img, .sidebar {
+body, h1, img, .sidebar, .sidebar a {
     margin: 0;
     padding: 0;
 }
@@ -14,7 +14,7 @@ body {
 
 /* Style the header with a purple background */
 h1 {
-    background-color: #562785; /* Purple background color */
+    background-color: #800080; /* Purple background color */
     color: #fff; /* White text color */
     padding: 20px;
     margin: 0; /* Remove any default margin */
@@ -33,7 +33,7 @@ img {
 
 /* Style the sidebar */
 .sidebar {
-    background-color: #ccc; /* Grey background color */
+    background-color: #ccc; /* Grey background color for the sidebar */
     width: 60px; /* Adjust the width as needed */
     height: 100%; /* Full height of the viewport */
     position: fixed; /* Fix the sidebar position */
@@ -41,13 +41,19 @@ img {
     left: 0; /* Position at the left */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Stack tabs vertically at the top */
 }
 
 .sidebar a {
     color: #333; /* Dark gray text color for the tabs */
     text-decoration: none;
     font-size: 20px; /* Adjust the font size as needed */
-    padding: 10px 0; /* Add spacing between tabs */
+    padding: 10px; /* Add spacing around tabs */
+    text-align: center;
+    background-color: #ccc; /* Grey background color for the tabs */
+    border-right: 4px solid #fff; /* White border on the right side of tabs */
+}
+
+.sidebar a:hover {
+    background-color: #666; /* Darker grey background on hover */
+    color: #fff; /* White text color on hover */
 }
