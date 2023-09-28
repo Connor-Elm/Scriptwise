@@ -45,12 +45,12 @@ nav a {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
+    background-color: #563785;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     text-align: center; /* Center-align dropdown items */
-    border: 1px solid #ccc; /* Add a border */
+    border: 2px solid #ccc; /* Add a border */
 }
 
 .dropdown-content li {
