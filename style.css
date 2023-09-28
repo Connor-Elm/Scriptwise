@@ -1,5 +1,5 @@
 /* Reset some default browser styles */
-body, h1, img, .sidebar, .sidebar a {
+body, h1, img, .sidebar, .sidebar a, .sidebar button {
     margin: 0;
     padding: 0;
 }
@@ -46,6 +46,7 @@ img {
     left: 0; /* Position at the left */
     display: flex;
     flex-direction: column;
+    justify-content: flex-end; /* Align items to the bottom */
 }
 
 .sidebar a {
@@ -75,8 +76,5 @@ img {
     margin: 5px 0;
     cursor: pointer;
     transition: background-color 0.3s ease; /* Add a smooth background color transition */
-}
-
-.sidebar button:hover {
-    background-color: #451e66; /* Darker purple background on hover */
+    align-self: flex-start; /* Align buttons to the start (bottom) of the sidebar */
 }
