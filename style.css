@@ -39,7 +39,6 @@ img {
 /* Style the circular number buttons */
 .number-buttons {
     display: flex;
-    justify-content: space-around; /* Arrange buttons with space between them */
     align-items: center; /* Vertically center buttons */
     position: fixed; /* Fix the buttons at the bottom */
     bottom: 20px; /* Position 20px from the bottom */
