@@ -1,64 +1,52 @@
 /* Reset some default browser styles */
-body, h1, img, .number-buttons, .circle-button {
+body, h1, h2, h3, ul, li, p {
     margin: 0;
     padding: 0;
 }
 
-/* Set a background color and text color for the body */
+/* Define common styles */
 body {
-    background-color: #f0f0f0; /* Light gray background */
     font-family: Arial, sans-serif;
-    color: #333; /* Dark gray text color */
-    text-align: center;
-    position: relative; /* Add relative positioning to the body */
-    z-index: 0; /* Set the z-index to 0 for the body */
+    background-color: #f7f7f7;
 }
 
-/* Style the header with the new color */
-h1 {
-    background-color: #562785; /* New header color */
-    color: #fff; /* White text color */
-    padding: 20px;
-    margin: 0; /* Remove any default margin */
-    position: relative; /* Add relative positioning to the header */
-    z-index: 0; /* Set the z-index to 1 for the header to make it overlap */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
 }
 
-/* Style the image */
-img {
-    max-width: 100px; /* Set a maximum width for the image */
-    height: auto;
-    position: absolute; /* Position the image absolutely */
-    top: 20px; /* Position 20px from the top */
-    left: 20px; /* Position 20px from the left */
-    border: 2px solid #333; /* Add a border around the image */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
-    z-index: 2; /* Set the z-index to 2 for the image to be above all */
-}
-
-/* Style the circular number buttons */
-.number-buttons {
+nav ul {
+    list-style: none;
     display: flex;
-    align-items: center; /* Vertically center buttons */
-    position: fixed; /* Fix the buttons at the bottom */
-    bottom: 20px; /* Position 20px from the bottom */
-    left: 0; /* Position at the left */
-    width: 100%; /* Full width of the viewport */
-    z-index: 3; /* Set the z-index to 3 for the buttons to be above all */
+    justify-content: space-around;
 }
 
-.circle-button {
-    width: 50px; /* Set the width and height for a circular button */
-    height: 50px;
-    background-color: #562785; /* Button background color */
-    color: #fff; /* Button text color */
-    border: none;
-    border-radius: 50%; /* Create a circular shape */
-    font-size: 20px; /* Button text size */
-    cursor: pointer;
+nav a {
+    color: #fff;
+    text-decoration: none;
 }
 
-/* Add some spacing between the buttons */
-.circle-button + .circle-button {
-    margin-left: 5px;
+.hero {
+    text-align: center;
+    padding: 3rem 0;
 }
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Add more CSS for other sections and elements as needed */
