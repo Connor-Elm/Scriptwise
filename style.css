@@ -1,5 +1,5 @@
 /* Reset some default browser styles */
-body, h1, img, .sidebar, .sidebar a, .sidebar button {
+body, h1, img {
     margin: 0;
     padding: 0;
 }
@@ -29,52 +29,9 @@ img {
     max-width: 100px; /* Set a maximum width for the image */
     height: auto;
     position: absolute; /* Position the image absolutely */
-    top: 0px; /* Position 20px from the top */
-    left: 0px; /* Position 20px from the left */
+    top: 20px; /* Position 20px from the top */
+    left: 20px; /* Position 20px from the left */
     border: 2px solid #333; /* Add a border around the image */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
     z-index: 2; /* Set the z-index to 2 for the image to be above all */
-}
-
-/* Style the sidebar */
-.sidebar {
-    background-color: #ccc; /* Grey background color for the sidebar */
-    width: 60px; /* Adjust the width as needed */
-    height: 100%; /* Full height of the viewport */
-    position: fixed; /* Fix the sidebar position */
-    top: 0; /* Position at the top */
-    left: 0; /* Position at the left */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Align items to the bottom */
-}
-
-.sidebar a {
-    color: #333; /* Dark gray text color for the tabs */
-    text-decoration: none;
-    font-size: 20px; /* Adjust the font size as needed */
-    padding: 10px; /* Add spacing around tabs */
-    text-align: center;
-    background-color: #ccc; /* Grey background color for the tabs */
-    border-right: 4px solid #fff; /* White border on the right side of tabs */
-    z-index: 1; /* Set the z-index to -1 for the numbers to be behind the header */
-    padding-top: 40px; /* Lower the text by 40px */
-    transition: background-color 0.3s ease; /* Add a smooth background color transition */
-}
-
-.sidebar a:hover {
-    background-color: #666; /* Darker grey background on hover */
-    color: #fff; /* White text color on hover */
-}
-
-/* Style the buttons */
-.sidebar button {
-    background-color: #562785; /* Purple background color for the buttons */
-    color: #fff; /* White text color for the buttons */
-    border: none;
-    padding: 10px;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Add a smooth background color transition */
-    align-self: flex-start; /* Align buttons to the start (bottom) of the sidebar */
 }
