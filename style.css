@@ -1,5 +1,5 @@
 /* Reset some default browser styles */
-body, h1, img {
+body, h1, img, .number-buttons, .circle-button {
     margin: 0;
     padding: 0;
 }
@@ -34,4 +34,32 @@ img {
     border: 2px solid #333; /* Add a border around the image */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
     z-index: 2; /* Set the z-index to 2 for the image to be above all */
+}
+
+/* Style the circular number buttons */
+.number-buttons {
+    display: flex;
+    justify-content: space-around; /* Arrange buttons with space between them */
+    align-items: center; /* Vertically center buttons */
+    position: fixed; /* Fix the buttons at the bottom */
+    bottom: 20px; /* Position 20px from the bottom */
+    left: 0; /* Position at the left */
+    width: 100%; /* Full width of the viewport */
+    z-index: 3; /* Set the z-index to 3 for the buttons to be above all */
+}
+
+.circle-button {
+    width: 50px; /* Set the width and height for a circular button */
+    height: 50px;
+    background-color: #562785; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 50%; /* Create a circular shape */
+    font-size: 20px; /* Button text size */
+    cursor: pointer;
+}
+
+/* Add some spacing between the buttons */
+.circle-button + .circle-button {
+    margin-left: 10px;
 }
