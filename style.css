@@ -14,9 +14,9 @@ body {
     z-index: 0; /* Set the z-index to 0 for the body */
 }
 
-/* Style the header with a purple background */
+/* Style the header with the new color */
 h1 {
-    background-color: #562785; /* Purple background color */
+    background-color: #562785; /* New header color */
     color: #fff; /* White text color */
     padding: 20px;
     margin: 0; /* Remove any default margin */
@@ -26,11 +26,13 @@ h1 {
 
 /* Style the image */
 img {
-    max-width: 95px; /* Set a maximum width for the image */
+    max-width: 100px; /* Set a maximum width for the image */
     height: auto;
     position: absolute; /* Position the image absolutely */
     top: 0px; /* Position 20px from the top */
-    left: 18px; /* Position 20px from the left */
+    left: 0px; /* Position 20px from the left */
+    border: 2px solid #333; /* Add a border around the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow to the image */
     z-index: 2; /* Set the z-index to 2 for the image to be above all */
 }
 
@@ -55,10 +57,26 @@ img {
     background-color: #ccc; /* Grey background color for the tabs */
     border-right: 4px solid #fff; /* White border on the right side of tabs */
     z-index: 1; /* Set the z-index to -1 for the numbers to be behind the header */
-    padding-top: 80px; /* Lower the text by Setpx */
+    padding-top: 40px; /* Lower the text by 40px */
+    transition: background-color 0.3s ease; /* Add a smooth background color transition */
 }
 
 .sidebar a:hover {
     background-color: #666; /* Darker grey background on hover */
     color: #fff; /* White text color on hover */
+}
+
+/* Style the buttons */
+.sidebar button {
+    background-color: #562785; /* Purple background color for the buttons */
+    color: #fff; /* White text color for the buttons */
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth background color transition */
+}
+
+.sidebar button:hover {
+    background-color: #451e66; /* Darker purple background on hover */
 }
