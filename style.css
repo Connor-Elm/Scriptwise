@@ -61,5 +61,5 @@ img {
 
 /* Add some spacing between the buttons */
 .circle-button + .circle-button {
-    margin-left: 10px;
+    margin-left: 5px;
 }
