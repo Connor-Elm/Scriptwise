@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minarets Scriptwise</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add CSS styles for the submenu */
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .nested:hover .sub-menu {
+            display: block;
+        }
+
+        /* Add more styles as needed */
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +31,8 @@
                 <li class="dropdown">
                     <a href="#">Courses &#9662;</a>
                     <ul class="dropdown-content">
-                        <li class="nested"><a href="lesson1">Lesson 1</a>
+                        <li class="nested">
+                            <a href="lesson1">Lesson 1</a>
                             <ul class="sub-menu">
                                 <li><a href="lesson1_1">Lesson 1.1</a></li>
                                 <li><a href="#lesson1_2">Lesson 1.2</a></li>
@@ -39,8 +57,20 @@
         <h1>Welcome to Minarets Scriptwise</h1>
         <p>Learn to code and build games through projects.</p>
     </section>
+
     <footer>
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
+
+    <script>
+        // JavaScript to toggle submenu visibility
+        const nestedLink = document.querySelector('.nested a');
+        const subMenu = document.querySelector('.sub-menu');
+
+        nestedLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            subMenu.style.display = (subMenu.style.display === 'block') ? 'none' : 'block';
+        });
+    </script>
 </body>
 </html>
