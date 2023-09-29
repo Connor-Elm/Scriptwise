@@ -30,7 +30,7 @@
     </header>
 
     <section class="hero">
-        <h1>Python Code Text</h1>
+        <h1>Python Code Editor</h1>
         <div class="python-editor">
             <div class="left-panel">
                 <h2>Type Python code:</h2>
@@ -71,31 +71,36 @@
 
         // Function to execute Python code and display the output
         function executePythonCode(code) {
-            // Create a form to submit the code to the server
-            var form = new FormData();
-            form.append("code", code);
+            const baseUrl = 'https://replit.com/data/hosted_files';
 
-            fetch("https://replit.com/data/hosted_files/evaluate2.py", {
-                method: "POST",
+            // Create a form with code and submit it to Repl.it for execution
+            const form = new FormData();
+            form.append('code', code);
+
+            fetch(`${baseUrl}/evaluate2.py`, {
+                method: 'POST',
                 headers: {
-                    "X-Requested-With": "XMLHttpRequest", // Set the X-Requested-With header
+                    'X-Requested-With': 'XMLHttpRequest', // Set the X-Requested-With header
                 },
                 body: form,
             })
-                .then(function (response) {
-                    if (!response.ok) {
-                        throw new Error("Network response was not ok");
-                    }
-                    return response.text();
-                })
-                .then(function (data) {
-                    // Display the output in the iframe
-                    document.getElementById("outputFrame").srcdoc = data;
-                })
-                .catch(function (error) {
-                    // Handle errors here
-                    console.error("There was a problem with the fetch operation:", error);
-                });
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(function (data) {
+                // Log the response data to the console (for debugging)
+                console.log(data);
+
+                // Display the output in the iframe
+                document.getElementById("outputFrame").srcdoc = data;
+            })
+            .catch(function (error) {
+                // Handle errors here
+                console.error('There was a problem with the fetch operation:', error);
+            });
         }
     </script>
 </body>
