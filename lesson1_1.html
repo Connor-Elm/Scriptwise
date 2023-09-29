@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Code Editor - Minarets Scriptwise</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/theme/monokai.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/python/python.js"></script>
 </head>
 <body>
     <header>
@@ -28,7 +32,7 @@
     </header>
 
     <section class="hero">
-        <h1>Python Code Text</h1>
+        <h1>Python Code Editor</h1>
         <div class="python-editor">
             <div class="left-panel">
                 <h2>Type Python code:</h2>
@@ -37,7 +41,7 @@
             </div>
             <div class="right-panel">
                 <h2>Output:</h2>
-                <div id="output" style="border: 1px solid #ccc; padding: 10px;"></div>
+                <iframe id="outputFrame" frameborder="0" width="100%" height="400"></iframe>
             </div>
         </div>
     </section>
@@ -46,35 +50,43 @@
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.0/brython.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.0/brython_stdlib.js"></script>
     <script>
-        // JavaScript to execute Python code and display output
+        // JavaScript to execute Python code in the iframe
         const pythonCode = document.getElementById('pythonCode');
         const runButton = document.getElementById('runButton');
-        const output = document.getElementById('output');
+        const outputFrame = document.getElementById('outputFrame');
+
+        // Initialize CodeMirror editor
+        const editor = CodeMirror.fromTextArea(pythonCode, {
+            mode: 'python',
+            theme: 'monokai',
+            lineNumbers: true,
+        });
 
         runButton.addEventListener('click', function () {
-            const code = pythonCode.value;
-            output.textContent = ""; // Clear previous output
+            const code = editor.getValue();
             executePythonCode(code);
         });
 
         function executePythonCode(code) {
-            try {
-                brython_run(code);
-            } catch (error) {
-                output.textContent = `Error: ${error.message}`;
-            }
-        }
+            const baseUrl = 'https://replit.com/data/hosted_files';
 
-        // Load Brython and execute Python code
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.0/brython_run.js';
-        script.onload = function () {
-            brython_run(); // Initialize Brython
-        };
-        document.body.appendChild(script);
+            // Create a form with code and submit it to Repl.it for execution
+            const form = document.createElement('form');
+            form.action = 'https://replit.com/data/hosted_files/evaluate2.py';
+            form.method = 'POST';
+            form.target = 'outputFrame';
+
+            const codeInput = document.createElement('input');
+            codeInput.type = 'text';
+            codeInput.name = 'code';
+            codeInput.value = code;
+            form.appendChild(codeInput);
+
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+        }
     </script>
 </body>
 </html>
