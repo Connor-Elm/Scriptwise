@@ -46,8 +46,7 @@
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.10.1/skulpt.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.10.1/skulpt-stdlib.js"></script>
+    <script src="https://brython.info/brython.js"></script>
     <script>
         // JavaScript to execute Python code and display output
         const pythonCode = document.getElementById('pythonCode');
@@ -61,11 +60,11 @@
         });
 
         function executePythonCode(code) {
-            Sk.configure({
-                output: (text) => (output.textContent += text),
-                read: (x) => Sk.builtinFiles['files'][x],
-            });
-            Sk.misceval.asyncToPromise(() => Sk.importMainWithBody("<stdin>", false, code, true));
+            try {
+                brython_run(code);
+            } catch (error) {
+                output.textContent = `Error: ${error.message}`;
+            }
         }
     </script>
 </body>
