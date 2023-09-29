@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Type and Display - Minarets Scriptwise</title>
+    <title>Python Code Execution - Minarets Scriptwise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,15 +28,16 @@
     </header>
 
     <section class="hero">
-        <h1>Type and Display</h1>
-        <div class="type-and-display">
+        <h1>Python Code Execution</h1>
+        <div class="python-execution">
             <div class="left-panel">
-                <h2>Type here:</h2>
-                <textarea id="userInput" rows="5" cols="30"></textarea>
+                <h2>Type Python code:</h2>
+                <textarea id="pythonCode" rows="10" cols="50"></textarea>
+                <button id="runButton">Run Code</button>
             </div>
             <div class="right-panel">
-                <h2>Display:</h2>
-                <div id="displayText"></div>
+                <h2>Output:</h2>
+                <div id="output"></div>
             </div>
         </div>
     </section>
@@ -45,13 +46,18 @@
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.10.1/skulpt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.10.1/skulpt-stdlib.js"></script>
     <script>
-        // JavaScript to update the display with user input
-        const userInput = document.getElementById('userInput');
-        const displayText = document.getElementById('displayText');
+        // JavaScript to execute Python code
+        const pythonCode = document.getElementById('pythonCode');
+        const runButton = document.getElementById('runButton');
+        const output = document.getElementById('output');
 
-        userInput.addEventListener('input', function () {
-            displayText.textContent = userInput.value;
+        runButton.addEventListener('click', function () {
+            const code = pythonCode.value;
+            Sk.configure({ output: (text) => (output.textContent += text) });
+            Sk.misceval.asyncToPromise(() => Sk.importMainWithBody("<stdin>", false, code, true));
         });
     </script>
 </body>
