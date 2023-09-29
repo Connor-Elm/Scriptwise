@@ -72,6 +72,18 @@ nav a {
 .dropdown:hover .dropdown-content {
     display: block;
 } 
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            background-color: #563785;
+            border: 2px solid #000;
+        }
+
+        .nested:hover .sub-menu {
+            display: block;
+        }
 
 /* Add more CSS for other sections and elements as needed */
 
