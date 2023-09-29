@@ -28,32 +28,14 @@
     </header>
 
     <section class="hero">
-        <h1>Python Code Text</h1>
+        <h1>Python Code Editor</h1>
         <div class="python-editor">
-            <div class="left-panel">
-                <h2>Type Python code:</h2>
-                <textarea id="pythonCode" rows="10" cols="50"></textarea>
-            </div>
-            <div class="right-panel">
-                <h2>Output:</h2>
-                <div id="output" style="border: 1px solid #ccc; padding: 10px;"></div>
-            </div>
+            <iframe src="https://repl.it/languages/python3" frameborder="0" width="100%" height="400"></iframe>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
-
-    <script>
-        // JavaScript to update the output div with the content of the textarea
-        const pythonCode = document.getElementById('pythonCode');
-        const output = document.getElementById('output');
-
-        pythonCode.addEventListener('input', function () {
-            const code = pythonCode.value;
-            output.textContent = code;
-        });
-    </script>
 </body>
 </html>
