@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minarets Scriptwise</title>
+    <title>About Us - Minarets Scriptwise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,16 +14,7 @@
                 <li class="dropdown">
                     <a href="#">Courses &#9662;</a>
                     <ul class="dropdown-content">
-                        <li class="nested">
-                            <a href="lesson1">Lesson 1</a>
-                            <ul class="sub-menu">
-                                <li><a href="lesson1_1">Lesson 1.1</a></li>
-                                <li><a href="#lesson1_2">Lesson 1.2</a></li>
-                                <li><a href="#lesson1_3">Lesson 1.3</a></li>
-                                <li><a href="#lesson1_4">Lesson 1.4</a></li>
-                                <li><a href="#lesson1_5">Lesson 1.5</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="lesson1.html">Lesson 1</a></li>
                         <li><a href="#lesson2">Lesson 2</a></li>
                         <li><a href="#lesson3">Lesson 3</a></li>
                         <li><a href="#lesson4">Lesson 4</a></li>
@@ -37,28 +28,24 @@
     </header>
 
     <section class="hero">
-        <h1>Welcome to Minarets Scriptwise</h1>
-        <h2>About Us</h2>
-        <p>For our 2024 SLE we decided to make a website to aid the programming curriculum. We are senior graduates of 2024 Conner Elm and Caden Halencak
-        and our passion for programming led us to change the coding curriculum for the better by creating a website in HTML to help you learn and understand basic and advanced concepts of code. 
-        We were students ourself and being rather distraught about the lack of actual coding we decided that we would make a website to help teach the future students of Minarets highschool.
-        </p>
-
+        <h1>About Minarets Scriptwise</h1>
+        <p>We are a coding and game development education platform.</p>
     </section>
+
+    <section class="content">
+        <h2>Our Mission</h2>
+        <p>Our mission is to empower individuals to learn coding and game development through hands-on projects and interactive lessons.</p>
+    </section>
+
+    <section class="content">
+        <h2>Our Team</h2>
+        <p>We have a dedicated team of experienced instructors who are passionate about teaching and helping our students succeed.</p>
+    </section>
+
+    <!-- You can add more content about your organization as needed -->
 
     <footer>
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
-
-    <script>
-        // JavaScript to toggle submenu visibility
-        const nestedLink = document.querySelector('.nested a');
-        const subMenu = document.querySelector('.sub-menu');
-
-        nestedLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            subMenu.style.display = (subMenu.style.display === 'block') ? 'none' : 'block';
-        });
-    </script>
 </body>
 </html>
