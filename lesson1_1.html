@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Code Execution - Minarets Scriptwise</title>
+    <title>Python Code Editor - Minarets Scriptwise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,12 +28,11 @@
     </header>
 
     <section class="hero">
-        <h1>Python Code Execution</h1>
-        <div class="python-execution">
+        <h1>Python Code Editor</h1>
+        <div class="python-editor">
             <div class="left-panel">
                 <h2>Type Python code:</h2>
                 <textarea id="pythonCode" rows="10" cols="50"></textarea>
-                <button id="runButton">Run Code</button>
             </div>
             <div class="right-panel">
                 <h2>Output:</h2>
@@ -51,12 +50,12 @@
     <script>
         // JavaScript to execute Python code
         const pythonCode = document.getElementById('pythonCode');
-        const runButton = document.getElementById('runButton');
         const output = document.getElementById('output');
 
-        runButton.addEventListener('click', function () {
+        pythonCode.addEventListener('input', function () {
             const code = pythonCode.value;
-            Sk.configure({ output: (text) => (output.textContent += text) });
+            Sk.pre = "output";
+            Sk.configure({ output: (text) => (output.textContent = text) });
             Sk.misceval.asyncToPromise(() => Sk.importMainWithBody("<stdin>", false, code, true));
         });
     </script>
