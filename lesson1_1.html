@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Code Editor - Minarets Scriptwise</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/theme/monokai.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/codemirror.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.2/mode/python/python.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-monokai.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
 </head>
 <body>
     <header>
@@ -32,11 +30,11 @@
     </header>
 
     <section class="hero">
-        <h1>Python Code Text</h1>
+        <h1>Python Code Editor</h1>
         <div class="python-editor">
             <div class="left-panel">
                 <h2>Type Python code:</h2>
-                <textarea id="pythonCode" rows="10" cols="50"></textarea>
+                <div id="editor" style="height: 300px; width: 100%;"></div>
                 <button id="runButton">Run Code</button>
             </div>
             <div class="right-panel">
@@ -51,23 +49,27 @@
     </footer>
 
     <script>
-        // JavaScript to execute Python code and display output
-        const pythonCode = document.getElementById('pythonCode');
-        const runButton = document.getElementById('runButton');
-        const outputFrame = document.getElementById('outputFrame');
+        // Get a reference to the Ace Editor container div
+        var editor = ace.edit("editor");
 
-        // Initialize CodeMirror editor
-        const editor = CodeMirror.fromTextArea(pythonCode, {
-            mode: 'python',
-            theme: 'monokai',
-            lineNumbers: true,
-        });
+        // Set the Ace Editor's theme (e.g., "ace/theme/monokai")
+        editor.setTheme("ace/theme/monokai");
 
-        runButton.addEventListener('click', function () {
-            const code = editor.getValue();
+        // Set the Ace Editor's mode (e.g., "ace/mode/python" for Python code)
+        editor.getSession().setMode("ace/mode/python");
+
+        // Set other editor options as needed
+        // For example, to enable line numbers:
+        editor.getSession().setUseWorker(false);
+        editor.renderer.setShowGutter(true);
+
+        // Event listener for running code
+        document.getElementById("runButton").addEventListener("click", function () {
+            var code = editor.getValue();
             executePythonCode(code);
         });
 
+        // Function to execute Python code (assuming you have the executePythonCode function)
         function executePythonCode(code) {
             const baseUrl = 'https://replit.com/data/hosted_files';
 
