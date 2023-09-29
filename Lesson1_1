@@ -1,0 +1,11 @@
+    <section class="lesson" id="lesson1_1">
+        <h2>Lesson 1.1 - Introduction to Coding</h2>
+        <!-- Lesson 1.1 content here -->
+    </section>
+
+    <section class="lesson" id="lesson1_2">
+        <h2>Lesson 1.2 - Basic Programming Concepts</h2>
+        <!-- Lesson 1.2 content here -->
+    </section>
+
+    <!-- Add more lesson sections as needed -->
