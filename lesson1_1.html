@@ -67,6 +67,14 @@
                 output.textContent = `Error: ${error.message}`;
             }
         }
+
+        // Load Brython and execute Python code
+        const script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.0/brython_run.js';
+        script.onload = function () {
+            brython_run(); // Initialize Brython
+        };
+        document.body.appendChild(script);
     </script>
 </body>
 </html>
