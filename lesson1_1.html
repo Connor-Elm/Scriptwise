@@ -45,18 +45,14 @@
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.10.1/skulpt.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.10.1/skulpt-stdlib.js"></script>
     <script>
-        // JavaScript to execute Python code and display output
+        // JavaScript to update the output div with the content of the textarea
         const pythonCode = document.getElementById('pythonCode');
         const output = document.getElementById('output');
 
         pythonCode.addEventListener('input', function () {
             const code = pythonCode.value;
-            output.textContent = ""; // Clear previous output
-            Sk.configure({ output: (text) => (output.textContent += text) });
-            Sk.misceval.asyncToPromise(() => Sk.importMainWithBody("<stdin>", false, code, true));
+            output.textContent = code;
         });
     </script>
 </body>
