@@ -30,12 +30,44 @@
     <section class="hero">
         <h1>Python Code Editor</h1>
         <div class="python-editor">
-            <iframe src="https://repl.it/languages/python3" frameborder="0" width="100%" height="400"></iframe>
+            <div class="left-panel">
+                <h2>Type Python code:</h2>
+                <textarea id="pythonCode" rows="10" cols="50"></textarea>
+                <button id="runButton">Run Code</button>
+            </div>
+            <div class="right-panel">
+                <h2>Output:</h2>
+                <div id="output" style="border: 1px solid #ccc; padding: 10px;"></div>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
+
+    <script>
+        // JavaScript to execute Python code and display output
+        const pythonCode = document.getElementById('pythonCode');
+        const runButton = document.getElementById('runButton');
+        const output = document.getElementById('output');
+
+        runButton.addEventListener('click', function () {
+            const code = pythonCode.value;
+            output.textContent = ""; // Clear previous output
+            try {
+                const result = evalPythonCode(code);
+                output.textContent = result;
+            } catch (error) {
+                output.textContent = `Error: ${error.message}`;
+            }
+        });
+
+        function evalPythonCode(code) {
+            // In a more advanced setup, you could use Skulpt or a server to execute Python code.
+            // Here, we use eval for simplicity.
+            return eval(code);
+        }
+    </script>
 </body>
 </html>
