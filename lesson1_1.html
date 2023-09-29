@@ -33,11 +33,10 @@
             <div class="left-panel">
                 <h2>Type Python code:</h2>
                 <textarea id="pythonCode" rows="10" cols="50"></textarea>
-                <button id="runButton">Run Code</button>
             </div>
             <div class="right-panel">
                 <h2>Output:</h2>
-                <div id="output" style="border: 1px solid #ccc; padding: 10px;"></div>
+                <pre id="output" style="border: 1px solid #ccc; padding: 10px;"></pre>
             </div>
         </div>
     </section>
@@ -47,27 +46,14 @@
     </footer>
 
     <script>
-        // JavaScript to execute Python code and display output
+        // JavaScript to execute Python code and display output in real-time
         const pythonCode = document.getElementById('pythonCode');
-        const runButton = document.getElementById('runButton');
         const output = document.getElementById('output');
 
-        runButton.addEventListener('click', function () {
+        pythonCode.addEventListener('input', function () {
             const code = pythonCode.value;
-            output.textContent = ""; // Clear previous output
-            try {
-                const result = evalPythonCode(code);
-                output.textContent = result;
-            } catch (error) {
-                output.textContent = `Error: ${error.message}`;
-            }
+            output.textContent = code; // Display the typed code in real-time
         });
-
-        function evalPythonCode(code) {
-            // In a more advanced setup, you could use Skulpt or a server to execute Python code.
-            // Here, we use eval for simplicity.
-            return eval(code);
-        }
     </script>
 </body>
 </html>
