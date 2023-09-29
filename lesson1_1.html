@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Minarets Scriptwise</title>
+    <title>Type and Display - Minarets Scriptwise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,24 +28,31 @@
     </header>
 
     <section class="hero">
-        <h1>Lesson 1.1</h1>
-        <p>We are a coding and game development education platform.</p>
+        <h1>Type and Display</h1>
+        <div class="type-and-display">
+            <div class="left-panel">
+                <h2>Type here:</h2>
+                <textarea id="userInput" rows="5" cols="30"></textarea>
+            </div>
+            <div class="right-panel">
+                <h2>Display:</h2>
+                <div id="displayText"></div>
+            </div>
+        </div>
     </section>
-
-    <section class="content">
-        <h2>Content</h2>
-        <p>Our mission is to empower individuals to learn coding and game development through hands-on projects and interactive lessons.</p>
-    </section>
-
-    <section class="content">
-        <h2>You work</h2>
-        <p>We have a dedicated team of experienced instructors who are passionate about teaching and helping our students succeed.</p>
-    </section>
-
-    <!-- You can add more content about your organization as needed -->
 
     <footer>
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
+
+    <script>
+        // JavaScript to update the display with user input
+        const userInput = document.getElementById('userInput');
+        const displayText = document.getElementById('displayText');
+
+        userInput.addEventListener('input', function () {
+            displayText.textContent = userInput.value;
+        });
+    </script>
 </body>
 </html>
