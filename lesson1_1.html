@@ -69,25 +69,33 @@
             executePythonCode(code);
         });
 
-        // Function to execute Python code (assuming you have the executePythonCode function)
+        // Function to execute Python code and display the output
         function executePythonCode(code) {
-            const baseUrl = 'https://replit.com/data/hosted_files';
+            // Create a form to submit the code to the server
+            var form = new FormData();
+            form.append("code", code);
 
-            // Create a form with code and submit it to Repl.it for execution
-            const form = document.createElement('form');
-            form.action = 'https://replit.com/data/hosted_files/evaluate2.py';
-            form.method = 'POST';
-            form.target = 'outputFrame';
-
-            const codeInput = document.createElement('input');
-            codeInput.type = 'text';
-            codeInput.name = 'code';
-            codeInput.value = code;
-            form.appendChild(codeInput);
-
-            document.body.appendChild(form);
-            form.submit();
-            document.body.removeChild(form);
+            fetch("https://replit.com/data/hosted_files/evaluate2.py", {
+                method: "POST",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest", // Set the X-Requested-With header
+                },
+                body: form,
+            })
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.text();
+                })
+                .then(function (data) {
+                    // Display the output in the iframe
+                    document.getElementById("outputFrame").srcdoc = data;
+                })
+                .catch(function (error) {
+                    // Handle errors here
+                    console.error("There was a problem with the fetch operation:", error);
+                });
         }
     </script>
 </body>
