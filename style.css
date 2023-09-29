@@ -61,6 +61,8 @@ nav a {
     color: #fff; /* Text color for dropdown links */
     text-decoration: none;
     transition: background-color 0.3s ease; /* Add transition effect */
+    padding: 15px 0; /* Increase padding for larger color change */
+    display: block; /* Ensure the entire button area is clickable */
 }
 
 .dropdown-content a:hover {
