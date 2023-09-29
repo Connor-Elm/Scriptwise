@@ -14,11 +14,19 @@
                 <li class="dropdown">
                     <a href="#">Courses &#9662;</a>
                     <ul class="dropdown-content">
-                        <li><a href="#">  Lesson 1</a></li>
-                        <li><a href="#">  Lesson 2</a></li>
-                        <li><a href="#">  Lesson 3</a></li>
-                        <li><a href="#">  Lesson 4</a></li>
-                        <li><a href="#">  Lesson 5</a></li>
+                        <li class="nested"><a href="lesson1">Lesson 1</a>
+                            <ul class="sub-menu">
+                                <li><a href="lesson1_1">Lesson 1.1</a></li>
+                                <li><a href="#lesson1_2">Lesson 1.2</a></li>
+                                <li><a href="#lesson1_3">Lesson 1.3</a></li>
+                                <li><a href="#lesson1_4">Lesson 1.4</a></li>
+                                <li><a href="#lesson1_5">Lesson 1.5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#lesson2">Lesson 2</a></li>
+                        <li><a href="#lesson3">Lesson 3</a></li>
+                        <li><a href="#lesson4">Lesson 4</a></li>
+                        <li><a href="#lesson5">Lesson 5</a></li>
                     </ul>
                 </li>
                 <li><a href="about.html">About</a></li>
@@ -28,13 +36,32 @@
     </header>
 
     <section class="hero">
-        <h1>About us</h1>
-        <p>Our SLE for the year of 2023 was the create a website to aid the coding curriculum for students like yourself. Our interest inprogramming compelled us to help this school move in a direction that not only improved upon itself but has students learning in a fun and interesting way..</p>
+        <h1>Welcome to Minarets Scriptwise</h1>
+        <p>Learn to code and build games through projects.</p>
     </section>
 
     <section class="features">
-        <!-- Add your course features here -->
+        <h2>Course Features</h2>
+        <ul>
+            <li><a href="#lesson1_1">Lesson 1.1</a></li>
+            <li><a href="#lesson1_2">Lesson 1.2</a></li>
+            <li><a href="#lesson1_3">Lesson 1.3</a></li>
+            <li><a href="#lesson1_4">Lesson 1.4</a></li>
+            <li><a href="#lesson1_5">Lesson 1.5</a></li>
+        </ul>
     </section>
+
+    <section class="lesson" id="lesson1_1">
+        <h2>Lesson 1.1 - Introduction to Coding</h2>
+        <!-- Lesson 1.1 content here -->
+    </section>
+
+    <section class="lesson" id="lesson1_2">
+        <h2>Lesson 1.2 - Basic Programming Concepts</h2>
+        <!-- Lesson 1.2 content here -->
+    </section>
+
+    <!-- Add more lesson sections as needed -->
 
     <footer>
         <p>&copy; 2023 Minarets Scriptwise</p>
