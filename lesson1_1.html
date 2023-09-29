@@ -48,15 +48,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.10.1/skulpt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.10.1/skulpt-stdlib.js"></script>
     <script>
-        // JavaScript to execute Python code
+        // JavaScript to execute Python code as the user types
         const pythonCode = document.getElementById('pythonCode');
         const output = document.getElementById('output');
+        let lastCode = "";
 
         pythonCode.addEventListener('input', function () {
             const code = pythonCode.value;
-            Sk.pre = "output";
-            Sk.configure({ output: (text) => (output.textContent = text) });
-            Sk.misceval.asyncToPromise(() => Sk.importMainWithBody("<stdin>", false, code, true));
+
+            if (code !== lastCode) {
+                lastCode = code;
+                output.textContent = "";
+                Sk.configure({ output: (text) => (output.textContent += text) });
+                Sk.misceval.asyncToPromise(() => Sk.importMainWithBody("<stdin>", false, code, true));
+            }
         });
     </script>
 </body>
