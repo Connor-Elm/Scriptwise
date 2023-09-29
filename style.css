@@ -57,8 +57,19 @@ nav a {
     padding: 10px 0;
 }
 
+.dropdown-content a {
+    color: #fff; /* Text color for dropdown links */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+.dropdown-content a:hover {
+    background-color: #462f5d; /* Background color on hover */
+}
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 /* Add more CSS for other sections and elements as needed */
+
