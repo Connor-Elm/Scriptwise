@@ -37,7 +37,7 @@
             </div>
             <div class="right-panel">
                 <h2>Output:</h2>
-                <pre id="output" style="border: 1px solid #ccc; padding: 10px;"></pre>
+                <div id="output" style="border: 1px solid #ccc; padding: 10px;"></div>
             </div>
         </div>
     </section>
@@ -46,7 +46,8 @@
         <p>&copy; 2023 Minarets Scriptwise</p>
     </footer>
 
-    <script src="https://brython.info/brython.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.0/brython.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.9.0/brython_stdlib.js"></script>
     <script>
         // JavaScript to execute Python code and display output
         const pythonCode = document.getElementById('pythonCode');
