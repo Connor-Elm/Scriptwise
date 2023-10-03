@@ -35,6 +35,9 @@ nav a {
 .hero h1 {
     font-size: 2.5rem;
 }
+.hero h3 {
+    font-size: 1.5rem;
+}
 
 /* Add this CSS for the dropdown menu */
 .dropdown {
