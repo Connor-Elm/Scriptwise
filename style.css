@@ -88,5 +88,11 @@ nav a {
             display: block;
         }
 
-/* Add more CSS for other sections and elements as needed */
-
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #563785;
+    color: #fff;
+    padding: 10px;
+}
