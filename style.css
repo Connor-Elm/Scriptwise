@@ -97,10 +97,14 @@ nav a {
     color: #666;
 }
 
-/* Add this CSS to position the footer */
 footer {
     background-color: #563785;
     color: #fff;
     padding: 10px;
     margin-top: auto; /* Push the footer to the bottom */
 }
+
+section p {
+    margin-bottom: 10px; /* Add margin to separate paragraphs */
+}
+
