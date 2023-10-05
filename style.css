@@ -8,6 +8,9 @@ body, h1, h2, h3, ul, li, p {
 body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    height: 100vh; /* Set the body height to fill the viewport */
 }
 
 header {
@@ -19,12 +22,13 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column; /* Stack tabs vertically */
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 0;
 }
 
 .hero {
@@ -34,10 +38,6 @@ nav a {
 
 .hero h1 {
     font-size: 2.5rem;
-}
-.hero h3 {
-    font-size: 1.5rem;
-    font-weight: normal; /* Removes Bolding */
 }
 
 /* Add this CSS for the dropdown menu */
@@ -76,24 +76,31 @@ nav a {
 .dropdown:hover .dropdown-content {
     display: block;
 } 
-        .sub-menu {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 100%;
-            background-color: #563785;
-            border: 2px solid #000;
-        }
 
-        .nested:hover .sub-menu {
-            display: block;
-        }
+/* Add styles for locked lessons */
+.lesson-content {
+    border: 1px solid #ddd; /* Add a border to lesson content */
+    padding: 1rem;
+    margin: 1rem 0;
+}
 
+.complete-lesson {
+    background-color: #f7f7f7;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    cursor: not-allowed;
+}
+
+.complete-lesson[disabled] {
+    background-color: #ccc;
+    color: #666;
+}
+
+/* Add this CSS to position the footer */
 footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     background-color: #563785;
     color: #fff;
     padding: 10px;
+    margin-top: auto; /* Push the footer to the bottom */
 }
