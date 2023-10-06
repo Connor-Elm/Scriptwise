@@ -74,11 +74,22 @@
             // Function to execute Python code and display the output
             function executePythonCode(code) {
                 try {
-                    // Evaluate the Python code and get the result
-                    var result = evalPythonCode(code);
+                    // Redirect Python's print output to a custom function
+                    var printOutput = '';
+                    var printFunction = function (text) {
+                        printOutput += text + '\n';
+                    };
+                    var originalConsoleLog = console.log;
+                    console.log = printFunction;
+                    
+                    // Execute the Python code
+                    evalPythonCode(code);
+
+                    // Restore the original console.log
+                    console.log = originalConsoleLog;
 
                     // Display the result in the output iframe
-                    document.getElementById("outputFrame").srcdoc = result;
+                    document.getElementById("outputFrame").srcdoc = '<pre>' + escapeHtml(printOutput) + '</pre>';
                 } catch (error) {
                     // Handle errors here
                     console.error('Error:', error);
@@ -86,17 +97,11 @@
                 }
             }
 
-            // Function to evaluate Python code and return the result as HTML
+            // Function to evaluate Python code
             function evalPythonCode(code) {
                 // You can customize this function to use a Python interpreter or library
                 // For simplicity, we're using the built-in JavaScript eval function here
-                var result = eval(code);
-
-                // Convert the result to a string and escape HTML characters
-                var escapedResult = escapeHtml(result);
-
-                // Wrap the result in HTML for display
-                return '<pre>' + escapedResult + '</pre>';
+                eval(code);
             }
 
             // Function to escape HTML characters
