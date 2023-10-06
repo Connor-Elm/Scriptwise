@@ -79,14 +79,16 @@
                     var printFunction = function (text) {
                         printOutput += text + '\n';
                     };
-                    var originalConsoleLog = console.log;
-                    console.log = printFunction;
-                    
-                    // Execute the Python code
-                    evalPythonCode(code);
 
-                    // Restore the original console.log
-                    console.log = originalConsoleLog;
+                    // Create a sandbox for the Python code execution
+                    var sandbox = {
+                        print: printFunction
+                    };
+
+                    // Execute the Python code within the sandbox
+                    with (sandbox) {
+                        evalPythonCode(code);
+                    }
 
                     // Display the result in the output iframe
                     document.getElementById("outputFrame").srcdoc = '<pre>' + escapeHtml(printOutput) + '</pre>';
