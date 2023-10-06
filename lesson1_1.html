@@ -93,7 +93,7 @@
                 var result = eval(code);
 
                 // Convert the result to a string and escape HTML characters
-                var escapedResult = escapeHtml(result.toString());
+                var escapedResult = escapeHtml(result);
 
                 // Wrap the result in HTML for display
                 return '<pre>' + escapedResult + '</pre>';
